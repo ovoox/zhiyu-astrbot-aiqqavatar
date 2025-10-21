@@ -5,18 +5,18 @@ from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api.star import Context, Star, register
 
 
-@register("qq_avatar", "知鱼", "AI解读用户头像", "1.0")
+@register("avatar_interpreter", "解读头像", "AI解读用户头像", "1.0")
 class AvatarInterpreterPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
-        
+        # 编译正则（提升性能，避免每次重复编译）
         self.command_pattern = re.compile(r"^(?:/)?解读头像$")
 
     @filter.on_message()
     async def interpret_avatar(self, event: AstrMessageEvent):
         msg = event.get_message_str().strip()
-        if not self.command_pattern。match(msg):
-            return  
+        if not self.command_pattern.match(msg):
+            return  # 不匹配则忽略
 
         sender_id = event.get_sender_id()
         if not sender_id:
@@ -25,7 +25,7 @@ class AvatarInterpreterPlugin(Star):
 
         yield event.plain_result("头像解读中...")
 
-        avatar_url = f"http://api.ocoa.cn/api/qqtx.php?qq={sender_id}"
+        avatar_url = f"http://q.qlogo.cn/headimg_dl?dst_uin={sender_id}&spec=640&img_type=jpg"
 
         api_url = (
             "https://missqiu.icu/API/aitl.php"
