@@ -1,15 +1,10 @@
 # 🌟 Zhiyu-AstrBot-AIQQAvatar
 
-> 一款基于 AI 的 QQ 头像智能解读插件，为你的 AstrBot 增添趣味与个性！
+> 一款AI解读QQ头像的AstrBot插件
 
-[![点我体验机器人](https://img.shields.io/badge/🤖%20点我体验-加入QQ群-blue?style=for-the-badge&logo=tencent-qq)](https://qun.qq.com/qunpro/robot/qunshare?biz_type=1&robot_uin=3889263267)
+[![体验机器人](https://img.shields.io/badge/🤖%20手机QQ-点我体验-blue?style=for-the-badge&logo=tencent-qq)](https://qun.qq.com/qunpro/robot/qunshare?biz_type=1&robot_uin=3889263267)
 
----
-
-## ✨ 功能亮点
-
-- **AI 智能解读头像**  
-  上传任意 QQ 头像，AI 将为你生成风趣、精准甚至“扎心”的个性化解读！
+[![加入QQ群](https://img.shields.io/badge/👥%20QQ群-点击加入-blue?style=for-the-badge&logo=tencent-qq)](https://qun.qq.com/universal-share/share?ac=1&authKey=Zmfc%2Bk%2FRiYMA9NPkA%2Byp5zbQp1jERoYslNruhnqzlPD%2FOmrtAZW7q71voT%2F8GI4U&busi_data=eyJncm91cENvZGUiOiIzMzg1Mzk1NTkiLCJ0b2tlbiI6IkszMzIzOHU4dVFjYXpIdzRzeG5QYWpNWUJNS1M0QTQ1dTVGRVFxdE1vRDhZRVBIQm53eTBpVFNSN3B2aHVWQ3UiLCJ1aW4iOiIzMjYwNDc4MTIxIn0%3D&data=ZbdiPWyvmMe7vzdTQF-Hb2OWukNrq6whA0PRbeWnXa1FdJDPvxQJJreXWPFmajtAuJdpn9FQhQqIqh8-2I3Zag&svctype=4&tempid=h5_group_info)
 
 ---
 
