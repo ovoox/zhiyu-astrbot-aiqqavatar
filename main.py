@@ -11,22 +11,16 @@ class AvatarInterpreterPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
         
-    def _decrypt_api_key(self) -> str:
-        """解密API密钥"""
-        # Base64编码的API密钥
+    def _get_api_key(self):
         encrypted_key = "YzYwYjVmZmEzZDZiNjMwNTZjNzcyNTg0Y2ExYzhhY2I1MzY5ZDc1YTk2N2YxNGI5ZjcyZTAzZmFiYzk3Y2I3Mg=="
         return base64.b64decode(encrypted_key).decode('utf-8')
     
-    def _decrypt_avatar_url(self, sender_id: str) -> str:
-        """解密头像URL"""
-        # 加密的头像URL基础部分
+    def _get_avatar_url(self, sender_id):
         encrypted_base = "aHR0cDovL2FwaS5vY29hLmNuL2FwaS9xcXR4LnBocA=="
         base_url = base64.b64decode(encrypted_base).decode('utf-8')
         return f"{base_url}?qq={sender_id}"
     
-    def _decrypt_api_url(self) -> str:
-        """解密API URL基础部分"""
-        # 加密的API URL基础部分
+    def _get_api_base_url(self):
         encrypted_base = "aHR0cHM6Ly9taXNzcWl1LmljdS9BUEkvYWl0bC5waHA="
         return base64.b64decode(encrypted_base).decode('utf-8')
 
@@ -39,12 +33,10 @@ class AvatarInterpreterPlugin(Star):
 
         yield event.plain_result("头像解读中...\n请耐心等待几秒")
 
-        # 使用解密方法获取URL和密钥
-        avatar_url = self._decrypt_avatar_url(sender_id)
-        api_base_url = self._decrypt_api_url()
-        api_key = self._decrypt_api_key()
+        avatar_url = self._get_avatar_url(sender_id)
+        api_base_url = self._get_api_base_url()
+        api_key = self._get_api_key()
 
-        # 构建完整的API URL
         api_url = (
             f"{api_base_url}"
             f"?apikey={api_key}"
