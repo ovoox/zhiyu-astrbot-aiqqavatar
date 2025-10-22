@@ -7,11 +7,6 @@
 [![加入QQ群](https://img.shields.io/badge/👥%20点击加入-QQ群-blue?style=for-the-badge&logo=tencent-qq)](https://qun.qq.com/universal-share/share?ac=1&authKey=Zmfc%2Bk%2FRiYMA9NPkA%2Byp5zbQp1jERoYslNruhnqzlPD%2FOmrtAZW7q71voT%2F8GI4U&busi_data=eyJncm91cENvZGUiOiIzMzg1Mzk1NTkiLCJ0b2tlbiI6IkszMzIzOHU4dVFjYXpIdzRzeG5QYWpNWUJNS1M0QTQ1dTVGRVFxdE1vRDhZRVBIQm53eTBpVFNSN3B2aHVWQ3UiLCJ1aW4iOiIzMjYwNDc4MTIxIn0%3D&data=ZbdiPWyvmMe7vzdTQF-Hb2OWukNrq6whA0PRbeWnXa1FdJDPvxQJJreXWPFmajtAuJdpn9FQhQqIqh8-2I3Zag&svctype=4&tempid=h5_group_info)
 ---
 
-## 支持功能：
-
-- 解读头像
----
-
 ## 安装方法：
 
 复制链接 到astr webui端插件页面 使用链接安装即可
@@ -24,4 +19,4 @@ https://github.com/ovoox/zhiyu-astrbot-aiqqavatar
 
 ## 使用方法：
 
-* 解读头像
+* 在群内发送 解读头像 即可
