@@ -49,7 +49,7 @@ class AvatarInterpreterPlugin(Star):
                 async with session.get(api_url) as response:
                     if response.status != 200:
                         logger.error(f"AI接口HTTP状态码: {response.status}")
-                        yield event.plain_result("头像解读失败 请稍后再试")
+                        yield event.plain_result("解读头像失败 请重试")
                         return
 
                     data = await response.json()
@@ -57,8 +57,8 @@ class AvatarInterpreterPlugin(Star):
                     if content.strip():
                         yield event.plain_result(content.strip())
                     else:
-                        yield event.plain_result("AI返回内容为空")
+                        yield event.plain_result("解读头像失败 请重试")
 
         except (aiohttp.ClientError, ValueError, KeyError, IndexError) as e:
             logger.error(f"处理AI响应时出错: {str(e)}")
-            yield event.plain_result("解析结果失败 请稍后再试")
+            yield event.plain_result("解读头像失败 请重试")
