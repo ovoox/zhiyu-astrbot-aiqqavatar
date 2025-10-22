@@ -20,4 +20,4 @@ https://github.com/ovoox/zhiyu-astrbot-aiqqavatar
 
 ## 使用方法：
 
-* 在群内发送 解读头像 即可
+* 解读头像
