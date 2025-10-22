@@ -9,8 +9,13 @@ class AvatarInterpreterPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
 
-    @filter.command("解读头像")
+    @filter.on_message()
     async def interpret_avatar(self, event: AstrMessageEvent):
+        msg = event.get_message_str().strip()
+        # ✅ 同时匹配 "/解读头像" 和 "解读头像"
+        if msg not in ["解读头像", "/解读头像"]:
+            return  # 不匹配则忽略
+
         sender_id = event.get_sender_id()
         if not sender_id:
             yield event.plain_result("无法获取您的QQ号")
@@ -35,7 +40,6 @@ class AvatarInterpreterPlugin(Star):
                         yield event.plain_result("头像解读失败 请稍后再试")
                         return
 
-                    # ✅ 解析 JSON 并提取 content
                     data = await response.json()
                     content = data["choices"][0]["message"]["content"]
                     if content.strip():
