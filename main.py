@@ -29,20 +29,34 @@ class AvatarInterpreterPlugin(Star):
         )
 
         try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(api_url) as response:
-                    if response.status != 200:
-                        logger.error(f"AI接口HTTP状态码: {response.status}")
-                        yield event.plain_result("头像解读失败 请稍后再试")
-                        return
+    async with aiohttp.ClientSession() as session:
+        async with session.get(api_url) as response:
+            if response.status != 200:
+                logger.error(f"AI接口HTTP状态码: {response.status}")
+                yield event.plain_result("头像解读失败 请稍后再试")
+                return
 
-                    data = await response.json()
-                    content = data["choices"][0]["message"]["content"]
-                    if content.strip():
-                        yield event.plain_result(content.strip())
-                    else:
-                        yield event.plain_result("AI返回内容为空")
+            data = await response.json()
 
-        except (aiohttp.ClientError, ValueError, KeyError, IndexError) as e:
-            logger.error(f"处理AI响应时出错: {str(e)}")
-            yield event.plain_result("解析结果失败 请稍后再试")
+            # ✅ 先检查是否有 error 字段
+            if "error" in data:
+                error_msg = data["error"].get("message", "未知错误")
+                logger.error(f"AI接口返回错误: {error_msg}")
+                yield event.plain_result(f"头像解读失败：{error_msg}")
+                return
+
+            # ✅ 再尝试取 choices
+            if "choices" not in data or not data["choices"]:
+                logger.error(f"AI返回结果缺少 choices 字段: {data}")
+                yield event.plain_result("AI返回格式异常 无法解析内容")
+                return
+
+            content = data["choices"][0]["message"]["content"]
+            if content.strip():
+                yield event.plain_result(content.strip())
+            else:
+                yield event.plain_result("AI返回内容为空")
+
+except (aiohttp.ClientError, ValueError, KeyError, IndexError) as e:
+    logger.error(f"处理AI响应时出错: {str(e)}")
+    yield event.plain_result("解析结果失败 请稍后再试")
