@@ -1,32 +1,32 @@
-# zhiyu-astrbot-aiqqavatar
-一款AI解读QQ头像的AstrBot插件
+# 🎭 Zhiyu-AstrBot-AIQQAvatar
+
+> 一款智能解读QQ头像的AstrBot插件
 
 ---
 
-欢迎使用我的机器人哦😘[点我查看](https://qun.qq.Com/qunpro/robot/qunshare?biz_type=1&robot_uin=3889263267)
+<div align="center">
+
+✨ **欢迎使用我的机器人** ✨
+
+[![QQ群机器人](https://img.shields.io/badge/点击查看-我的机器人-blue?style=for-the-badge)](https://qun.qq.com/qunpro/robot/qunshare?biz_type=1&robot_uin=3889263267)
+
+</div>
 
 ---
 
+## 🚀 功能特色
 
-## 支持功能：
+- 🔍 **智能解读头像** - 通过AI技术深度分析QQ头像，提供有趣的解读结果
 
-- 解读头像
 ---
 
-## 安装方法：
+## 📦 安装指南
 
-复制链接 到astr webui端插件页面 使用链接安装即可
+### 方式一：链接安装（推荐）
 
-```
+1. 复制下方安装链接
+2. 前往Astr WebUI端插件页面
+3. 使用链接安装即可
+
+```bash
 https://github.com/ovoox/zhiyu-astrbot-aiqqavatar
-```
-
----
-
-## 使用方法：
-
-##### 相关指令：
-
-* 解读头像
-
-
