@@ -1,4 +1,3 @@
-import re
 import aiohttp
 from astrbot.api import logger
 from astrbot.api.event import filter, AstrMessageEvent
@@ -9,13 +8,12 @@ from astrbot.api.star import Context, Star, register
 class AvatarInterpreterPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
-        # 编译正则（提升性能，避免每次重复编译）
-        self.command_pattern = re.compile(r"^(?:/)?解读头像$")
 
     @filter.on_message()
     async def interpret_avatar(self, event: AstrMessageEvent):
         msg = event.get_message_str().strip()
-        if not self.command_pattern.match(msg):
+        # ✅ 同时匹配 "/解读头像" 和 "解读头像"
+        if msg not in ["解读头像", "/解读头像"]:
             return  # 不匹配则忽略
 
         sender_id = event.get_sender_id()
