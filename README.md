@@ -1,34 +1,23 @@
-# 🎭 Zhiyu-AstrBot-AIQQAvatar
+# 🌟 Zhiyu-AstrBot-AIQQAvatar
 
-> 一款智能解读QQ头像的AstrBot插件
+> 一款基于 AI 的 QQ 头像智能解读插件，为你的 AstrBot 增添趣味与个性！
 
----
-
-<div align="center">
-
-✨ **欢迎使用我的机器人** ✨
-
-[![QQ群机器人](https://img.shields.io/badge/点击查看-我的机器人-blue?style=for-the-badge)](https://qun.qq.com/qunpro/robot/qunshare?biz_type=1&robot_uin=3889263267)
-
-[![AstrBot交流群](https://img.shields.io/badge/加入-AstrBot插件交流群-green?style=for-the-badge)](https://qun.qq.com/universal-share/share?ac=1&authKey=Zmfc%2Bk%2FRiYMA9NPkA%2Byp5zbQp1jERoYslNruhnqzlPD%2FOmrtAZW7q71voT%2F8GI4U&busi_data=eyJncm91cENvZGUiOiIzMzg1Mzk1NTkiLCJ0b2tlbiI6IkszMzIzOHU4dVFjYXpIdzRzeG5QYWpNWUJNS1M0QTQ1dTVGRUFxdE1vRDhZRVBIQm53eTBpVFNSN3B2aHVWQ3UiLCJ1aW4iOiIzMjYwNDc4MTIxIn0%3D&data=ZbdiPWyvmMe7vzdTQF-Hb2OWukNrq6whA0PRbeWnXa1FdJDPvxQJJreXWPFmajtAuJdpn9FQhQqIqh8-2I3Zag&svctype=4&tempid=h5_group_info)
-
-</div>
+[![点我体验机器人](https://img.shields.io/badge/🤖%20点我体验-加入QQ群-blue?style=for-the-badge&logo=tencent-qq)](https://qun.qq.com/qunpro/robot/qunshare?biz_type=1&robot_uin=3889263267)
 
 ---
 
-## 🚀 功能特色
+## ✨ 功能亮点
 
-- 🔍 **智能解读头像** - 通过AI技术深度分析QQ头像，提供有趣的解读结果
+- **AI 智能解读头像**  
+  上传任意 QQ 头像，AI 将为你生成风趣、精准甚至“扎心”的个性化解读！
 
 ---
 
-## 📦 安装指南
+## 🛠️ 安装方式（推荐）
 
-### 方式一：链接安装（推荐）
+1. 打开 **AstrBot WebUI** 的插件管理页面  
+2. 选择 **“通过链接安装”**  
+3. 粘贴以下仓库地址：
 
-1. 复制下方安装链接
-2. 前往Astr WebUI端插件页面
-3. 使用链接安装即可
-
-```bash
+```text
 https://github.com/ovoox/zhiyu-astrbot-aiqqavatar
