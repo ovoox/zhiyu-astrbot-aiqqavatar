@@ -18,7 +18,7 @@
 复制链接 到astr webui端插件页面 使用链接安装即可
 
 ```
-https://github.com/ovoox/zhiyu-astrbot-sjyy
+https://github.com/ovoox/zhiyu-astrbot-aiqqavatar
 ```
 
 ---
