@@ -2,7 +2,6 @@ from astrbot.api.all import *
 from astrbot.api.event import filter, AstrMessageEvent
 import aiohttp
 import re
-import base64
 from typing import Optional
 
 
@@ -10,19 +9,6 @@ from typing import Optional
 class AvatarInterpreterPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
-        
-    def _get_api_key(self):
-        encrypted_key = "YzYwYjVmZmEzZDZiNjMwNTZjNzcyNTg0Y2ExYzhhY2I1MzY5ZDc1YTk2N2YxNGI5ZjcyZTAzZmFiYzk3Y2I3Mg=="
-        return base64.b64decode(encrypted_key).decode('utf-8')
-    
-    def _get_avatar_url(self, sender_id):
-        encrypted_base = "aHR0cDovL2FwaS5vY29hLmNuL2FwaS9xcXR4LnBocA=="
-        base_url = base64.b64decode(encrypted_base).decode('utf-8')
-        return f"{base_url}?qq={sender_id}"
-    
-    def _get_api_base_url(self):
-        encrypted_base = "aHR0cHM6Ly9taXNzcWl1LmljdS9BUEkvYWl0bC5waHA="
-        return base64.b64decode(encrypted_base).decode('utf-8')
 
     @filter.regex(r"^(?:/)?解读头像$")
     async def interpret_avatar(self, event: AstrMessageEvent):
@@ -33,13 +19,11 @@ class AvatarInterpreterPlugin(Star):
 
         yield event.plain_result("头像解读中...\n请耐心等待几秒")
 
-        avatar_url = self._get_avatar_url(sender_id)
-        api_base_url = self._get_api_base_url()
-        api_key = self._get_api_key()
+        avatar_url = f"http://api.ocoa.cn/api/qqtx.php?qq={sender_id}"
 
         api_url = (
-            f"{api_base_url}"
-            f"?apikey={api_key}"
+            "https://missqiu.icu/API/aitl.php"
+            "?apikey=c60b5ffa3d6b63056c772584ca1c8acb5369d75a967f14b9f72e03fabc97cb72"
             "&text=解读一下这个头像，不要输出markdown格式，要纯文本返回"
             f"&url={avatar_url}"
         )
