@@ -5,7 +5,7 @@ import re
 from typing import Optional
 
 
-@register("avatar_interpreter", "解读头像", "AI解读用户头像", "1.0")
+@register("zhiyu-astrbot-aiqqavatar", "解读头像", "一款AI解读QQ头像的AstrBot插件", "1.0")
 class AvatarInterpreterPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
